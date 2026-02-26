@@ -5,10 +5,12 @@
 
 package functions
 
-import "os"
+import (
+	"os"
+)
 
 func IsTerminal(f *os.File) bool {
-	fi, err := f.Stat()
+	var fi, err = f.Stat()
 	if err != nil {
 		return false
 	}
